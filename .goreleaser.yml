@@ -67,8 +67,8 @@ changelog:
 
 dockers:
   - image_templates:
-      - "oryd/hydra-maester:{{ .Tag }}-amd64"
-      - "oryd/hydra-maester:{{ .ShortCommit }}-amd64"
+      - "embaya/hydra-maester:{{ .Tag }}-amd64"
+      - "embaya/hydra-maester:{{ .ShortCommit }}-amd64"
     goarch: amd64
     build_flag_templates:
       - "--platform=linux/amd64"
@@ -76,8 +76,8 @@ dockers:
     ids:
       - "linux-amd64"
   - image_templates:
-      - "oryd/hydra-maester:{{ .Tag }}-arm64"
-      - "oryd/hydra-maester:{{ .ShortCommit }}-arm64"
+      - "embaya/hydra-maester:{{ .Tag }}-arm64"
+      - "embaya/hydra-maester:{{ .ShortCommit }}-arm64"
     goarch: arm64
     build_flag_templates:
       - "--platform=linux/arm64"
@@ -86,16 +86,16 @@ dockers:
       - "linux-arm64"
 
 docker_manifests:
-  - name_template: "oryd/hydra-maester:{{ .Tag }}"
+  - name_template: "embaya/hydra-maester:{{ .Tag }}"
     id: "tag"
     image_templates:
-      - "oryd/hydra-maester:{{ .Tag }}-amd64"
-      - "oryd/hydra-maester:{{ .Tag }}-arm64"
-  - name_template: "oryd/hydra-maester:latest"
+      - "embaya/hydra-maester:{{ .Tag }}-amd64"
+      - "embaya/hydra-maester:{{ .Tag }}-arm64"
+  - name_template: "embaya/hydra-maester:latest"
     id: "latest"
     image_templates:
-      - "oryd/hydra-maester:{{ .Tag }}-amd64"
-      - "oryd/hydra-maester:{{ .Tag }}-arm64"
+      - "embaya/hydra-maester:{{ .Tag }}-amd64"
+      - "embaya/hydra-maester:{{ .Tag }}-arm64"
 
 release:
   prerelease: auto
